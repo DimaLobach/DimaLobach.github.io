@@ -40,7 +40,7 @@ function drawLeaf(x, y) {
   path.listen("mouseover", function(){
     path.remove();
     counterLabel.text("Swiped: " + leavesCounter++);
-    if (gameLayer.numChildren() < 200) shakeTree(300); 
+    if (gameLayer.numChildren() == 0) shakeTree(300); 
   });
 
   return path; 
