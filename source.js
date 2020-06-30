@@ -37,7 +37,7 @@ function drawLeaf(x, y) {
   // apply random transformations
   path.scale(scale, scale, x, y).rotate(angle, x, y);
 
-  path.listen("mouseclic", function(){
+  path.listen("mouseover", function(){
     path.remove();
     counterLabel.text("Swiped: " + leavesCounter++);
     if (gameLayer.numChildren() == 0) shakeTree(300); 
