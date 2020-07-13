@@ -1,0 +1,375 @@
+/* */
+//
+;
+void function() {}
+return
+
+
+
+
+
+
+for
+while
+do.. while
+continue
+break
+
+
+
+Запятая ,
+Запятая тоже является оператором, используется в следующих случаях:
+
+Перечисление элементов в массивах (урок про массивы)
+Перечисление аргументов в функциях (урок про функции)
+Выполнение последовательности действий (сделать это И это)
+
+
+
+& – возвращает адрес данных в памяти (адрес первого блока данных)
+* – возвращает значение по указанному адресу
+-> – оператор косвенного обращения к членам и методам (для указателей на структуры и классы). Является короткой записью конструкции через указатель: a->b равносильно (*a).b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+charAt()
+myString.charAt(index);
+setCharAt()
+myString.setCharAt(index, val);
+compareTo()
+myString.compareTo(myString2);
+concat()
+myString.concat(value);
+endsWith()
+myString.endsWith(myString2);
+startsWith()
+myString.startsWith(myString2);
+equals()
+myString.equals(myString2);
+equalsIgnoreCase()
+myString.equalsIgnoreCase(myString2);
+indexOf()
+myString.indexOf(val);
+myString.indexOf(val, from);
+lastIndexOf()
+myString.lastIndexOf(val);
+myString.lastIndexOf(val, from);
+length()
+remove()
+myString.remove(index);
+myString.remove(index, count);
+replace()
+reserve()
+myString.reserve(size);
+c_str()
+myString.c_str();
+trim()
+myString.trim();
+substring()reserve()
+myString.reserve(size);
+c_str()
+myString.c_str();
+trim()
+myString.trim();
+substring()
+toCharArray()
+myString.toCharArray(buf, len);
+getBytes()
+myString.getBytes(buf, len);
+toFloat()
+myString.toFloat();
+toDouble()
+myString.toDouble();
+toInt()
+myString.toInt();
+String myString = "10500";
+int val = myString.toInt();
+toLowerCase()
+myString.toLowerCase();
+toUpperCase()
+
+
+
+
+
+
+
+
+
+
+toInt()
+toFloat()
+toCharArray()
+
+
+
+
+reinterpret_cast – приведение типов без проверки, непосредственное указание компилятору. Применяется только в случае полной уверенности программиста в собственных действиях. Не снимает const и volatile, применяется для приведения указателя к указателю, указателя к целому и наоборот;
+static_cast – преобразует выражения одного статического типа в объекты и значения другого статического типа. Поддерживается преобразование численных типов, указателей и ссылок по иерархии наследования как вверх, так и вниз. Преобразование проверяется на уровне компиляции и в случае ошибки приведения типов будет выдано сообщение;
+dynamic_cast – используется для динамического приведения типов во время выполнения. В случае неправильного приведения типов для ссылок вызывается исключительная ситуация std::bad_cast, а для указателей будет возвращен 0;
+const_cast – самое простое приведение типов. Снимает const и volatile, то есть константность и отказ от оптимизации компилятором переменной. Это преобразование проверяется на уровне компиляции и в случае ошибки приведения типов будет выдано сообщение.
+
+
+
+
+isAlpha(thisChar) – возвращает true, если thisChar – буква
+isAlphaNumeric(thisChar) – возвращает true, если thisChar – буква или цифра
+isAscii(thisChar) – возвращает true, если thisChar входит в таблицу ASCII
+isControl(thisChar) – возвращает true, если thisChar – контрольный символ
+isDigit(thisChar) – возвращает true, если thisChar – цифра
+isGraph(thisChar) – возвращает true, если thisChar – печатаемый знак (кроме пробела)
+isPrintable(thisChar) – возвращает true, если thisChar – печатаемый знак (включая пробел)
+isHexadecimalDigit(thisChar) – возвращает true, если thisChar цифра 0-9 или буква A-F
+isPunct(thisChar) – возвращает true, если thisChar – знак пунктуации
+isLowerCase(thisChar) – возвращает true, если thisChar – буква в нижнем регистре (маленькая)
+isUpperCase(thisChar) – возвращает true, если thisChar – буква в верхнем регистре (большая)
+isSpace(thisChar) – возвращает true, если thisChar – пробел
+isWhitespace(thisChar) – возвращает true, если thisChar – форматированный пробел (formfeed (‘\f’), newline (‘\n’), carriage return (‘\r’), horizontal tab (‘\t’), and vertical tab (‘\v’))
+
+
+
+
+
+
+
+
+
+
+
+
+
+long val;
+val = 2000000000 + 6000000;         // посчитает корректно (т.к. сложение)
+val = 25 * 1000;                    // посчитает корректно (умножение, меньше 32'768)
+val = 35 * 1000;                    // посчитает НЕКОРРЕКТНО! (умножение, больше 32'768)
+val = (long)35 * 1000;              // посчитает корректно (выделяем память (long) )
+val = 35 * 1000L;                   // посчитает корректно (модификатор L)
+val = 35 * 1000u;                   // посчитает корректно (модификатор u)
+val = 70 * 1000u;                   // посчитает НЕКОРРЕКТНО (модификатор u, результат > 65535)
+val = 1000 + 35 * 10 * 100;         // посчитает НЕКОРРЕКТНО! (в умножении больше 32'768)
+val = 1000 + 35 * 10 * 100L;        // посчитает корректно! (модификатор L)
+val = (long)35 * 1000 + 35 * 1000;  // посчитает НЕКОРРЕКТНО! Второе умножение всё портит
+val = (long)35 * 1000 + (long)35 * 1000;  // посчитает корректно (выделяем память (long) )
+val = 35 * 1000L + 35 * 1000L;      // посчитает корректно (модификатор L)
+
+
+
+
+
+Тип записи	Пример	Чему равно
+Десятичная дробь	20.5	20.5
+Научный	2.34E5	2.34*10^5 или 234000
+Инженерный	67e-12	67*10^-12 или 0.000000000067
+
+
+
+
+
+
+float val;
+val = 100 / 3;          // посчитает НЕПРАВИЛЬНО (результат 3.0)
+val = (float)100 / 3;   // посчитает правильно (указываем (float))
+val = 100.0 / 3;        // посчитает правильно (есть число float)
+val = 100 / 3.0;        // посчитает правильно (есть число float)
+float val2 = 100;
+val = val2 / 3;         // посчитает правильно (есть число float)
+
+
+
+
+int val;
+val = 3.25;         // val принимает 3
+val = 3.92;         // val принимает 3
+val = round(3.25);  // val принимает 3
+val = round(3.92);  // val принимает 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pinMode(pin, mode)
+INPUT – вход (все пины сконфигурированы так по умолчанию)
+OUTPUT – выход (при использовании analogWrite ставится автоматически)
+INPUT_PULLUP – подтяжка к питанию (например для обработки кнопок)
+
+digitalRead(pin)
+digitalWrite(pin, value)
+analogWrite(pin, value)
+analogRead(pin)
+analogReference(mode)
+DEFAULT: опорное напряжение равно напряжению питания МК
+INTERNAL: встроенный источник опорного на 1.1V для ATmega168 или ATmega328P и 2.56V на ATmega8
+INTERNAL1V1: встроенный источник опорного на 1.1V (только для Arduino Mega)
+INTERNAL2V56: встроенный источник опорного на 2.56V (только для Arduino Mega)
+EXTERNAL: опорным будет считаться напряжение, поданное на пин AREF
+
+
+tone(pin, frequency), tone(pin, frequency, duration)
+noTone(pin)
+pulseIn(pin, value), pulseIn(pin, value, timeout)
+pulseInLong(pin, value), pulseInLong(pin, value, timeout)
+shiftIn(dataPin, clockPin, bitOrder)
+shiftOut(dataPin, clockPin, bitOrder, value)
+
+
+
+Serial
+
+
+
+delay(time)
+delayMicroseconds(time)
+millis()
+micros()
+
+
+HIGH и LOW			1 и 0 соответственно
+INPUT, OUTPUT, INPUT_PULLUP	0, 1 и 2 соответственно
+SERIAL, DISPLAY			0 и 1 соответственно
+LSBFIRST, MSBFIRST		0 и 1 соответственно
+CHANGE, FALLING, RISING		1, 2 и 3 соответственно
+			Время компиляции в формате 14:12:12
+
+
+
+
+
+
+
+
+
+sizeof(variable)
+PROGMEM
+pgm_read_byte(data); – для 1-го байта (char, byte, int8_t, uint8_t)
+pgm_read_word(data); – для 2-х байт (int, word, unsigned int, int16_t, int16_t)
+pgm_read_dword(data); – для 4-х байт (long, unsigned long, int32_t, int32_t)
+pgm_read_float(data); – для чисел с плавающей точкой
+const int16_t ints[] PROGMEM = {65000, 32796, -16843};
+Serial.println((int)pgm_read_word(&(ints[2]))); 
+F() macro
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export – слово не используется (зарезервировано), читать тут
+virtual – спецификатор виртуальной функции, читать тут
+yield() – часть библиотеки Schelduer для создания “многопоточности”. Читать тут
+complex – комплексный класс. Читать тут
+explict – позволяет создать неконвертирующий конструктор
+union – объект “объединение”, читать тут
+friend – дружественные функции, читать тут
+NULL и null – пустые указатели
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+register – данный спецификатор указывает компилятору хранить значение переменной не в памяти, а в регистре процессора
+auto – не имеет смысла
+mutable – позволяет создать “неприкосновенный” объект
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+verride – модификатор
+final – модификатор
+try – попытка
+throw – вызов исключения
+catch – обработка исключения
+namespace – создание пространства имён
+using – позволяет использовать имя из пространства имён без оператора ::

@@ -1,0 +1,7 @@
+:=================#==================:
+#include
+#include <Servo.h>  // подключает библиотеку Servo.h
+#include "Servo.h"  // подключает библиотеку Servo.h
+#define
+#if, #elif, #else, #endif
+#ifdef, #ifndef
